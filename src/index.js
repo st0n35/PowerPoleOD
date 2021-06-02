@@ -11,7 +11,7 @@ async function load_model() {
     // It's possible to load the model locally or from a repo
     // You can choose whatever IP and PORT you want in the "http://127.0.0.1:8080/model.json" just set it before in your https server
     //const model = await loadGraphModel("http://127.0.0.1:8080/model.json");
-    const model = await loadGraphModel("https://raw.githubusercontent.com/st0n35/PowerPoleOD/main/PowerPoleODM/6.2%20Power%20Pole%20Model_model-export_iod_tf_js-PowerPole_20210601095847-2021-06-02T14_02_58.522702Z_model.json");
+    const model = await loadGraphModel("https://raw.githubusercontent.com/st0n35/PowerPoleOD/main/PowerPoleODM/model.json");
     return model;
   }
 
@@ -152,7 +152,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Real-Time Object Detection: Kangaroo</h1>
+        <h1>Real-Time Object Detection: Power Poles</h1>
         <h3>MobileNetV2</h3>
         <video
           style={{height: '600px', width: "500px"}}
