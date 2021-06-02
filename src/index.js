@@ -17,7 +17,7 @@ async function load_model() {
 
 let classesDir = {
     1: {
-        name: 'Kangaroo',
+        name: 'Power Pole',
         id: 1,
     },
     2: {
@@ -74,7 +74,8 @@ class App extends React.Component {
   };
 
   process_input(video_frame){
-    const tfimg = tf.browser.fromPixels(video_frame).toInt();
+    //const tfimg = tf.browser.fromPixels(video_frame).toInt();
+	const tfimg = tf.browser.fromPixels(video_frame);
     const expandedimg = tfimg.transpose([0,1,2]).expandDims();
     return expandedimg;
   };
