@@ -64,7 +64,7 @@ class App extends React.Component {
 
     detectFrame = (video, model) => {
         tf.engine().startScope();
-        model.executeAsync(this.process_input(video)).then(predictions => {
+        model.executeAsync(this.process_input(video).toFloat()).then(predictions => {
         this.renderPredictions(predictions, video);
         requestAnimationFrame(() => {
           this.detectFrame(video, model);
@@ -74,8 +74,8 @@ class App extends React.Component {
   };
 
   process_input(video_frame){
-    //const tfimg = tf.browser.fromPixels(video_frame).toInt();
-	const tfimg = tf.browser.fromPixels(video_frame);
+    const tfimg = tf.browser.fromPixels(video_frame).toInt();
+	//const tfimg = tf.browser.fromPixels(video_frame);
     const expandedimg = tfimg.transpose([0,1,2]).expandDims();
     return expandedimg;
   };
