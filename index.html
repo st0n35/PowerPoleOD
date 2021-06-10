@@ -1,0 +1,38 @@
+<html>
+<head>
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+<script src="https://unpkg.com/@tensorflow/tfjs-automl"></script>
+<script src = "https://d3js.org/d3.v4.min.js"></script>
+<style>
+
+</style>
+</head>
+<body >
+	
+	<video autoplay muted id="webcam" width="900" height="900" style="position: absolute;top:0;left:0;"></video>
+  <svg width="900" height="900" style="position: absolute;top:0;left:0;">
+    <style>
+        .box {
+          stroke-width: 2;
+          fill: none;
+          stroke: red;
+        }
+        .label {
+          font-size: 12px;
+          fill: white;
+          text-anchor: middle;
+        }
+        .label-rect {
+          fill: black;
+        }
+      </style>
+</svg>
+	
+	
+	<div id="predictions-mask"></div>
+	<div id="predictions-no-mask"></div>
+  <button type="button" id="startPredicting" onclick="startPredicting()" style="position: absolute;top:1000;left:0;">Start Predicting</button>
+	<button type="button" id="stopPredicting" onclick="stopPredicting()" style="position: absolute;top:1000;left:200;">Stop Predicting</button>
+	<script src= "index.js"></script>
+</body>
+</html>
